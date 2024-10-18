@@ -100,7 +100,7 @@ func getimgurl(url string) (string, error) {
 		return "", errors.New(e)
 	}
 	var imageurl string
-	if imageurl = json.Get("img").Str; imageurl == "" {
+	if imageurl = json.Get("data.0.urls.original").Str; imageurl == "" {
 		return "", errors.New("未找到相关内容, 换个tag试试吧")
 	}
 	return imageurl, nil
