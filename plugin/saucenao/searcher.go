@@ -190,7 +190,7 @@ func init() { // 插件主体
 				}
 			}
 		})
-	engine.OnRegex(`^设置\s?saucenao\s?api\s?key\s?([0-9a-f]{40})$`, zero.SuperUserPermission, zero.OnlyPrivate).SetBlock(true).
+	engine.OnRegex(`^设置\s?saucenao\s?api\s?key\s?([0-9a-f]{40})$`, zero.SuperUserPermission).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			var err error
 			saucenaocli, err = gophersauce.NewClient(&gophersauce.Settings{
